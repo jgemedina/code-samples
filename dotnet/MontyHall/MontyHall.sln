@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MontyHall", "MontyHall\MontyHall.csproj", "{1A86C938-C388-4DEB-8471-9E825112979B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MontyHall.Tests", "MontyHall.Tests\MontyHall.Tests.csproj", "{F30CF47A-A3B1-404F-B825-1EEA28601FA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A86C938-C388-4DEB-8471-9E825112979B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A86C938-C388-4DEB-8471-9E825112979B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A86C938-C388-4DEB-8471-9E825112979B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A86C938-C388-4DEB-8471-9E825112979B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F30CF47A-A3B1-404F-B825-1EEA28601FA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F30CF47A-A3B1-404F-B825-1EEA28601FA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F30CF47A-A3B1-404F-B825-1EEA28601FA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F30CF47A-A3B1-404F-B825-1EEA28601FA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

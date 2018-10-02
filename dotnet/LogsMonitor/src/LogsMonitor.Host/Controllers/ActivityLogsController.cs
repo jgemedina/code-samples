@@ -11,7 +11,6 @@ using LogsMonitor.Core.Abstractions;
 
 namespace LogsMonitor.Host.Controllers
 {
-
     using Models;
 
     public sealed class ActivityLogsController : Controller
@@ -19,15 +18,13 @@ namespace LogsMonitor.Host.Controllers
         private readonly IActivityLogsService _logsService;
 
         public ActivityLogsController(IActivityLogsService logsService)
-        {
-            _logsService = logsService ?? throw new ArgumentNullException(nameof(logsService));
-        }
+            => _logsService = logsService ?? throw new ArgumentNullException(nameof(logsService));
 
         [HttpGet]
         [HttpCacheFactory(20)]
         public async Task<ActionResult<IEnumerable<ActivityLogEntryViewModel>>> Index()
         {
-            await Task.Delay(5000);
+            await Task.Delay(2000);
             
             return Json(_logsService.GetActivityLogs().Select(l => new ActivityLogEntryViewModel {
                 EventTimestamp = string.Concat(l.EventTimestamp.ToShortDateString(), " ", l.EventTimestamp.ToShortTimeString()),

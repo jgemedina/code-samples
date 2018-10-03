@@ -12,10 +12,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using CacheCow.Server.Core.Mvc;
 
+using LogsMonitor.Core.Model;
+using LogsMonitor.Host.CacheComponents;
+
 namespace LogsMonitor.Host
 {
     using Extensions;
-    
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -38,7 +41,12 @@ namespace LogsMonitor.Host
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            #region CacheCow setup
             services.AddHttpCachingMvc();
+            services.AddExtractorForViewModelMvc<ActivityLogEntry, ActivityLogEntryETagExtractor>(false);
+            services.AddExtractorForViewModelMvc<IEnumerable<ActivityLogEntry>, ActivityLogEntryCollectionETagExtractor>();
+            #endregion
+
             services.AddApplicationDependencies();
         }
 

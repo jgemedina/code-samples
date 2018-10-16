@@ -14,7 +14,8 @@ namespace LogsMonitor.Host.CacheComponents
             var tagValue = new StringBuilder(32);
             /**
              * This is where we use a field from the instance to calculate the etag
-             * 'EventTimestamp' is not a good example but just using it to fill in code.
+             * 'EventTimestamp' is not a good example nor does a Log entry as it is unlikely
+             * to change.
              *
              * If this resource did change on the server, the etag calculated would eventually be
              * different from that cached on the client.

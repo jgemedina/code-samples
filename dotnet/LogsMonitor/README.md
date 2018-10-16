@@ -11,10 +11,6 @@ This software project uses to some level the following techniques:
 
 * [ASP.NET Core 2.1](ASPNET)
 * Docker / Docker Compose (Linux-based images)
-* [CacheCow](CacheCow)
+* [CacheCow](CacheCow
 
-_Docker_ could definitely be omitted, however, we may _expand_ this solution in the near future, so, it may come handy.
-
-# Iterations
-
-TBD
+Not a full app as I wanted to go over some of the basic library elements.

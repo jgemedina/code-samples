@@ -33,5 +33,19 @@ namespace LogsMonitor.Host.Controllers
                 UserAction = l.UserAction
             }));
         }
+
+        [HttpGet]
+        [HttpCacheFactory(20, ViewModelType = typeof(ActivityLogEntryViewModel))]
+        public async Task<ActionResult<IEnumerable<ActivityLogEntryViewModel>>> Index2()
+        {
+            await Task.Delay(2000);
+            
+            return Json(_logsService.GetActivityLogs().Select(l => new ActivityLogEntryViewModel {
+                EventTimestamp = string.Concat(l.EventTimestamp.ToShortDateString(), " ", l.EventTimestamp.ToShortTimeString()),
+                UserIdentity = l.Who.ToString(),
+                SystemArea = l.SystemArea,
+                UserAction = l.UserAction
+            }));
+        }        
     }
 }

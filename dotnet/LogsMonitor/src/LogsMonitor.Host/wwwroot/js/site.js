@@ -16,7 +16,7 @@ $(document).ready(function () {
         return;
     }
 
-    $.get('/activitylogs', function(response) {
+    $.get('/activitylogs/index2', function(response) {
         console.debug(response);
 
         let responseData = response;

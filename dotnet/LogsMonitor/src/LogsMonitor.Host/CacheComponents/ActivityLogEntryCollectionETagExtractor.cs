@@ -2,20 +2,17 @@ using System.Collections.Generic;
 
 using CacheCow.Server;
 
-using LogsMonitor.Core.Model;
-
 namespace LogsMonitor.Host.CacheComponents
 {
-    internal sealed class ActivityLogEntryCollectionETagExtractor : ITimedETagExtractor<IEnumerable<ActivityLogEntry>>
+    using Models;
+
+    internal sealed class ActivityLogEntryCollectionETagExtractor : ITimedETagExtractor<IEnumerable<ActivityLogEntryViewModel>>
     {
-        public TimedEntityTagHeaderValue Extract(IEnumerable<ActivityLogEntry> viewModel)
+        public TimedEntityTagHeaderValue Extract(IEnumerable<ActivityLogEntryViewModel> viewModel)
         {
             throw new System.NotImplementedException();
         }
 
-        public TimedEntityTagHeaderValue Extract(object viewModel)
-        {
-            throw new System.NotImplementedException();
-        }
+        public TimedEntityTagHeaderValue Extract(object viewModel) => Extract(viewModel as IEnumerable<ActivityLogEntryViewModel>);
     }
 }
